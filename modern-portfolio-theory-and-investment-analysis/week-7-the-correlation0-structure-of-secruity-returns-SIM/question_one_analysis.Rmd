@@ -1,0 +1,152 @@
+---
+title: "Question One Analysis "
+author: "Shahid"
+date: "2025-07-06"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## 💼 Diving Into Portfolio Management: Understanding Portfolio Variance
+
+Recently, I began a new challenge: investing in stocks. One of the first questions I thought about was—regardless of individual returns—how could I best create an **optimal investment set of assets**?
+
+This led me into the world of **portfolio management**.
+
+After reading about **Markowitz's theory of optimal portfolios**, I learned that constructing an ideal portfolio relies on just two components:
+
+1. **Expected return (mean)**
+2. **Variance or volatility of the portfolio**
+
+Based on this framework, each combination of possible portfolios occupies a unique space in the risk–return plane, forming what we call the **efficient frontier**. *(We’ll skip over the theoretical backdrop for now.)*
+
+---
+
+### ⚠️ The Key Problem
+
+Given we know the volatility and return of all stocks, how do we *efficiently* find:
+
+1. The **variance** of a given portfolio
+2. The **expected return** of a given portfolio
+
+I’ll come back to the second part in another blog.  
+Today, I’m focusing on:
+
+### 📊 How Do We Calculate the Variance of a Portfolio?
+
+Let’s break it down in practical, mathematical terms.
+
+
+# Single Index model 
+
+A key problem when calculating the variacne of a portfolio, 
+$$
+\sigma_p^2 = \sum_{i=1}^{n} \sum_{j=1}^{n} w_i w_j \sigma_i \sigma_j \rho_{ij}
+$$
+
+
+## 🧠 Why Covariance Matrices Explode with Portfolio Size
+
+When analyzing a portfolio, one key ingredient is the **covariance matrix**—the foundation for calculating portfolio variance, optimal weights, and risk. But as the number of assets grows, so does the matrix... fast.
+
+## What Is a Covariance Matrix?
+
+It’s a table showing how each asset moves in relation to the others. If you're analyzing **n** stocks, you need an **n × n** matrix to account for every pairwise relationship—including each asset’s own variance.
+
+### ⚖️ Scaling Example
+
+- With **3 stocks**, the matrix size is  
+  \( 3 \times 3 = 9 \) components
+- With **100 stocks**, the matrix balloons to  
+  \( 100 \times 100 = 10{,}000 \) components 😬
+
+That's 10,000 entries just for one statistical matrix!
+
+###💡 Are All Components Unique?
+
+Nope. Since the covariance matrix is **symmetric**, only the **upper (or lower) triangle** and **diagonal** contain unique data. The number of distinct elements is:
+
+$$
+\frac{n(n + 1)}{2}
+$$
+
+So for **100 stocks**:
+
+$$
+\frac{100 \times 101}{2} = 5{,}050
+$$
+
+Still huge—just not as bad as 10,000!
+
+### 📈 Why It Matters
+
+As portfolios scale into dozens or hundreds of assets, computing and inverting the covariance matrix becomes more intensive.
+
+## How the Single Model Index simplifies this process?
+We since we don't want to do all these calculation, we can simplify this process by compared each stock in our portfolio to a given market index. We 'assume' that all stocks move with a a given market index. That is the return of any given stocks and made of, (1) Our Chosen market index , known as systmetic risk and (2) firm specific risk including company perforamcen, knownn as our unsystematic risk.This relation ship can be show through 
+
+\begin{equation}
+R_i = = \text{unsystematic risk + systematic risk} = \alpha_i + \varepsilon_i + \beta_i R_m 
+\end{equation}
+
+Now, $\alpha$ is the portion of our stock’s return not explained by the market; $\varepsilon_i$ is our 'variation' or error term that is specific to the firm. These are unpredictable and uncorrelated with market movements — think scandals, product launches, or failures. Importantly, our $\beta$ represents the expected change in our stock’s return, $R_i$, given a change in the market index, $R_m$.
+
+As you would note, the Single-Index Model assumes a linear regression — that is, our stock return is linearly related to the market return. This is a strong assumption, but a useful starting point. Of course, we can later assume a non-linear relationship between $R_i$ and $R_m$, which leads us into models like GARCH, polynomial regression, and others.
+
+
+
+# Problem Statement
+
+Monthly return data are presented below for each of three stocks and the S&P index
+(corrected for dividends) for a 12-month period. Calculate the following quantities:
+
+1. alpha for each stock
+
+2. beta for each stock
+
+3. the standard deviation of the residuals from each regression
+
+4. the correlation coefficient between each security and the market
+
+5. the average return on the market
+
+6. the variance of the market
+
+# Exploratory Data Analysis 
+## Time Series Plot
+
+```{r df, echo=FALSE}
+suppressWarnings(suppressPackageStartupMessages(library(ggplot2)))
+library(ggplot2)
+df <- read.csv("./question_one_4_stocks_dataset.csv")
+
+# Exploratory Data Analysis
+# ggplot(data = df)
+ggplot(df, aes(x = Month)) + 
+  geom_line(aes(y = A, color = "A")) + 
+  geom_line(aes(y = B, color = "B")) + 
+  geom_line(aes(y = C, color = "C")) + 
+  geom_line(aes(y = `S.P`, color = "S&P")) + 
+  labs(title = "Monthly Returns for Securities A, B, C, and S&P", 
+       x = "Month", y = "Returns (%)", color = "Security") +
+  theme_minimal()
+```
+By Visual Inspections we can note with S&P as our benchmark 
+
+- there a period of correlation for all three stocks A,B,C followed by some period.
+
+- From a visual inspection the highest correlated stock is A.
+
+- Seasonality: 
+  - 1-2 : decline 
+  
+  - 5 - 6 : all stock prices declined 
+  
+  - 10 - 12 : all stock prices declined
+
+- Stock C is extremelt volitile compare to other stocks
+
+
+
