@@ -93,11 +93,9 @@ R_i = = \text{unsystematic risk + systematic risk} = \alpha_i + \varepsilon_i + 
 
 Now, $\alpha$ is the portion of our stock’s return not explained by the market; $\varepsilon_i$ is our 'variation' or error term that is specific to the firm. These are unpredictable and uncorrelated with market movements — think scandals, product launches, or failures. Importantly, our $\beta$ represents the expected change in our stock’s return, $R_i$, given a change in the market index, $R_m$.
 
-As you would note, the Single-Index Model assumes a linear regression — that is, our stock return is linearly related to the market return. This is a strong assumption, but a useful starting point. Of course, we can later assume a non-linear relationship between $R_i$ and $R_m$, which leads us into models like GARCH, polynomial regression, and others.
+As you would note, the Single-Index Model assumes a linear regression — that is, our stock return is linearly related to the market return. This is a strong assumption, but a useful starting point. Of course, we can later assume a non-linear relationship between $R_i$ and $R_m$, which leads us into models like GARCH, polynomial regression, and others. 
 
-
-
-# Problem Statement
+# Lets get into a problem
 
 Monthly return data are presented below for each of three stocks and the S&P index
 (corrected for dividends) for a 12-month period. Calculate the following quantities:
@@ -148,5 +146,121 @@ By Visual Inspections we can note with S&P as our benchmark
 
 - Stock C is extremelt volitile compare to other stocks
 
+# Single Index Model Implementation 
+## Step 1 : Creating a linear regression to find our $\beta$, $a_i$
+Given in a Single Index Model we assume the relation between a given stocks is based on the market index. Suppose we have a S&P500 as our market index. Now we can find out create a linear regression $R_i = a_i + \beta_i R_m + \epsilon$. Graphing these result, 
 
+```{r, echo=FALSE, message=FALSE, warning=FALSE}
+# Load libraries
+library(ggplot2)
+library(patchwork)
 
+# Load dataset (change path if needed)
+df <- read.csv("~/Github/portfolio-management/modern-portfolio-theory-and-investment-analysis/week-7-the-correlation0-structure-of-secruity-returns-SIM/question_one_4_stocks_dataset.csv")
+
+# Market and individual stock returns
+R_m <- df$S.P
+R_a <- df$A
+R_b <- df$B
+R_c <- df$C
+
+# Linear regression models
+model.a.s.p <- lm(R_a ~ R_m)
+model.b.s.p <- lm(R_b ~ R_m)
+model.c.s.p <- lm(R_c ~ R_m)
+
+# Coefficients
+a.coef <- coef(model.a.s.p)
+b.coef <- coef(model.b.s.p)
+c.coef <- coef(model.c.s.p)
+
+# Sequence for regression lines
+x.s.p <- seq(from = -10 , to = 20, by = 0.25)
+y.a <- a.coef[1] + a.coef[2]*x.s.p
+y.b <- b.coef[1] + b.coef[2]*x.s.p
+y.c <- c.coef[1] + c.coef[2]*x.s.p
+
+line_df <- data.frame(x = x.s.p, y.a = y.a, y.b = y.b, y.c = y.c)
+
+# Plot for A
+pa.and.lm <- ggplot(df, aes(x = S.P, y = A)) +
+  geom_point(color = "steelblue") +
+  geom_line(data = line_df, aes(x = x, y = y.a), color = "darkred", size = 1.2) +
+  annotate("text", x = 2, y = 20,
+           label = paste0("R_i = ", round(a.coef[2], 2), "R_m + ", round(a.coef[1], 2)),
+           size = 3)
+
+# Plot for B
+pb.and.lm <- ggplot(df, aes(x = S.P, y = B)) +
+  geom_point(color = "steelblue") +
+  geom_line(data = line_df, aes(x = x, y = y.b), color = "darkred", size = 1.2) +
+  annotate("text", x = 2, y = 20,
+           label = paste0("R_i = ", round(b.coef[2], 2), "R_m + ", round(b.coef[1], 2)),
+           size = 3)
+
+# Plot for C
+pc.and.lm <- ggplot(df, aes(x = S.P, y = C)) +
+  geom_point(color = "steelblue") +
+  geom_line(data = line_df, aes(x = x, y = y.c), color = "darkred", size = 1.2) +
+  annotate("text", x = 2, y = 50,
+           label = paste0("R_i = ", round(c.coef[2], 2), "R_m + ", round(c.coef[1], 2)),
+           size = 3)
+
+# Combine plots
+graph.scatter.lm.line <- pa.and.lm + pb.and.lm + pc.and.lm + 
+  plot_layout(ncol = 2) +
+  plot_annotation("Scatter plots comparing each stock's return to market return with regression lines")
+
+print(graph.scatter.lm.line)
+```
+
+Now given we can estimate the return of reach individual stock given by 
+$$
+\mathbb{E}[R_i] = \alpha_i + \beta_i \mathbb{E}[R_m]
+$$
+Using our data, we can calculate our expected market return $\mathbb{E}[R_m] = 3.005$. From this for each stock A,B,C we can calculate our Expected return for each stock 
+
+$$
+\begin{aligned}
+\mathbb{E}
+\begin{bmatrix}
+R_a \\
+R_b \\
+R_c
+\end{bmatrix}
+&=
+\begin{bmatrix}
+a_a \\
+a_b \\
+a_c
+\end{bmatrix}
++
+
+\begin{bmatrix}
+\beta_a \\
+\beta_b \\
+\beta_c
+\end{bmatrix} \cdot \mathbb{E}[R_m] \\
+&=
+\begin{bmatrix}
+-0.61 \\
+3.25 \\
+-0.13
+\end{bmatrix}
++
+\begin{bmatrix}
+1.18 \\
+0.98 \\
+2.4
+\end{bmatrix}
+\cdot 3.005 \\
+&=
+\begin{bmatrix}
+2.9359 \\
+6.1949 \\
+7.082
+\end{bmatrix}.
+\end{aligned}
+$$
+
+Now suppose suppose we have $1500 to invest and we decided 
