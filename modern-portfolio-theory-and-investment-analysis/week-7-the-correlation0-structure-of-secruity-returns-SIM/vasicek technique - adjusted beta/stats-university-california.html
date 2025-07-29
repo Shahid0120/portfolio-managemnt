@@ -1,0 +1,3152 @@
+
+<!-- saved from url=(0056)http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/ -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title> Nicolas Christou's classes... 
+</title>
+</head>
+<body>
+
+<h1 align="center"> <font color="#336600" face="arial"> 
+Statistics C183/C283: Statistical Models in Finance
+</font></h1>
+
+<h3>  <p> Announcements  </p> </h3>
+
+First lecture is on Monday, 28 March 2022 <br>
+Location:  Fowler A139 <br> 
+Day/time: MWF 12:00 - 12:50 <br> 
+See you then! <br> <br>
+
+<!--
+Location:  Royce Hall 190 <BR>
+Day/time: WF 11:00 - 11:50 <BR> 
+See you then! <BR> </BR>
+</UL>
+-->
+
+
+For the course syllabus click
+<a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/syllabusc183c283_s22.pdf"> here</a>.
+
+
+
+
+
+
+<h3> <p> Useful links: </p> </h3>
+Statistics Online Computational Resource (SOCR):
+<li> <a href="http://www.socr.ucla.edu/">  http://www.socr.ucla.edu </a><br>
+<br>
+<h4> <img src="./stats-university-california_files/socr_logo.jpg">  <br>
+SOCR Educational Materials:  <br>
+<li> <a href="http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials"> 
+http://wiki.stat.ucla.edu/socr/index.php/SOCR_EduMaterials. </a><br>
+
+</li><li> <a href="http://wiki.stat.ucla.edu/socr/index.php/EBook"> 
+Probability and Statistics EBook. </a><br>
+
+</li><li> <a href="https://cran.r-project.org/"> Download R and packages. </a>
+
+</li><li> <a href="http://www.rstudio.com/"> Download RStudio. </a>
+
+
+
+<!--
+<H3> <P> Labs </P> </H3>
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/timeplot_index.txt"> 1. Time plot of S&P500 and DJIA - an example.  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab2_s16.txt"> 2. Pracrtice R - stock market data.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_two_stocks_example"> 3. Example with two stocks
+(portfolio possibilities curve, efficient frontier). </a><BR>
+For handout #3 also download the R commands and the files with the data using the following 
+3 links: <BR>
+ <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/fin_1.txt"> 3a. R commands. </a><BR>
+ <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/table_1.csv"> 3b. First data set (table1.csv). </a><BR>
+ <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/table_2.csv"> 3c.  Second data set (table2.csv). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_lab.txt"> 4.  Lab - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab5_trace_s16.txt"> 5.  Trace out the efficient
+frontier. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab5_trace_s16_sol.txt"> 6.  Trace out the efficient
+frontier - solutions. </a><BR>
+
+
+<!--
+<!--
+
+<!--
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab1_s15_sol.txt"> 1a. Lab 1 - solutions.  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab2_s15.txt"> 2. Lab 2 - minimum risk portfolio, point of tangency, etc.  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab3_s15.txt"> 3. Lab 3 - Trace out the efficient frontier.  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/lab4_s15.txt"> 4. Lab 4 - Single index model:  Rank stocks.  </a><BR>
+-->
+
+<!--
+
+
+-->
+
+
+<h3> <p> Handouts </p> </h3>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_introduction_history.pdf"> 1. Historical note
+(from "Against the Gods, the Remarkable Story of Risk", by Peter Berstein, Wiley 1998). </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_introduction.pdf"> 2. Introduction. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_intro_diversification1.pdf"> 3. Diversification - a simple example.  </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_intro.pdf"> 4. Basics. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_investigation.pdf"> 5. Correlation coefficient and portfolio risk. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_why_works.pdf"> 6. Why diversification works. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_matrix_dif.pdf"> 7. Matrix and vector
+differentiation.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/analytic_derivation_frontier.pdf"> 8. An Analytic Derivation of the
+Efficient Portfolio Frontier (JFQA, Robert Merton, 1972). </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_short_sales_theory.pdf"> 9. Short sales. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hyperbola.pdf"> 10.  Hyperbola. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_rf.pdf"> 11. Efficient frontier with risk free lending and borrowing. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent.pdf"> 12. How to find the point of
+tangency (see also handout 11). </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent_example.pdf"> 13.  Point of tangency - example. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_review_questions.pdf"> 14.  Review questions. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_single_index.pdf"> 15.  Single index model - summary. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_dist_R2.pdf"> 16.  Distribution of R square. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume2.pdf"> 17.  Adjusting the betas using Blume's technique. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_week3_lec2_blume_paper_summary.pdf"> 18.  Adjusting
+the betas using Blume's technique (summary). </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/vasicek_betas.pdf"> 19.  Adjusting the betas using Vasicek's technique. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_betas.pdf"> 20.  Adjusting the betas - summary. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_betas.pdf"> 21.  Are betas best? </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/levy.pdf"> 22.  On the Short-Term Stationarity of Beta Coeffcients. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/beta_adjust.pdf"> 23.  Adjusting betas -
+sources of prediction errors. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_press_summary.pdf"> 24.  Adjusting betas -
+sources of prediction errors - summary. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_optimal_portfolios.pdf"> 25.  Simple criteria for optimal portfolio selection. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_steps.pdf"> 26.  Single index model steps. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_kuhn_tucker.pdf"> 27.  Single index model -
+Kuhn-Tucker conditions when short sales are not allowed. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_short_sales.pdf"> 28.  Single index model - example with short sales allowed. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_no_short_sales.pdf"> 29.  Single index model - example with short sales not allowed. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_single_index_ex.pdf"> 30.  Single index model and optimization procedure give the same answer. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_steps.pdf"> 31.  Constant correlation model steps. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_short_sales.pdf"> 32.  Constant correlation - example with
+short sales allowed. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_no_short_sales.pdf"> 33.  Constant correlation - example with short sales
+not allowed. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_multi.pdf"> 34.  Simple criteria for optimal portfolio selection:  The multi
+group case. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multigroup_model.pdf"> 35.  Multigroup model. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multi_index.pdf"> 36.  Multi-index model. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/decomposition_eugene_fama.pdf"> 37. Components of
+Investement Performance (paper by Eugene Fama). </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/eugene_fama_decomposition.pdf"> 38. Plot of the decomposition
+of overall performance. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_options_basics_intro.pdf"> 39.  Options - basics. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_call_put_upper_lower.pdf"> 40.  Lower and upper bounds for call and put options and put call parity. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_trading_options.pdf"> 41.  Trading strategies using 
+options. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_butterfly_ex.pdf"> 42.  Butterfly example using R. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_options_general.pdf"> 43.  Options - general notes. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_binomial.pdf"> 44.  Binomial option pricing model. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/CRR_binomial_paper.doc"> 45.  Binomial option pricing model - Cox, Ross, Rubinstein (1979). </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/binomial_put_european_and_american.pdf"> 46.  Binomial option pricing model for put option. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_model_stock_process_revised.pdf"> 47. A model for stock prices. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_ito_black_scholes_merton.pdf"> 48. Ito process and Black-Scholes-Merton 
+model. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_summary_options.pdf"> 49. Options - summary. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/Greeks1.pdf">50. The Greeks. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_black_scholes_exercise.pdf"> 51. Exercise. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_implied_volatility.pdf"> 52. Implied volatility. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam2_s22.pdf"> 53.  Exam 2. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_exam2_sol_s22.pdf"> 54.  Exam 2 solutions. </a><br>
+
+
+
+
+
+
+<!--
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_lab_example.R"> 65. Options lab - example. </a><BR>
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/VaR_example.R"> 70.  Value at Risk - examples. </a><BR>
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+<!--
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockData-13.csv"> 11.  Data on three stocks for the example of handout #12 (hyperbola). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/merton_parabola_example.R"> 12.  Parabola example - R script.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/merton_hyperbola_example.R"> 13.  Hyperbola example - R script.  </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/mutual_fund_theorem.R"> 14.  Mutual
+fund theorem - R script.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risk_free_asset.R"> 15.  Risk free asset - R script.  </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/port_tangent_R.txt"> 19.  R code for point of tangency. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_trace.pdf"> 20.  Trace out the efficient frontier - example. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/trace.R"> 21.  Trace out the
+efficient frontier - R code.  See handout 20. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risky_assets_risk_free_asset.R"> 22.  R code with several results
+from previous notes. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_review_questions.pdf"> 23.  Review questions. </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume__vasicek_adjusted_betas.R"> 28.  Adjusting the betas using
+Blume's and Vasicek's technique - example in R. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData48.csv"> 28a.  csv file stockData48.csv. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData49.csv"> 28b. csv file stockData49.csv. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData50.csv"> 28c. csv file stockData50.csv. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/press_decomposition.R"> 25.  Decomposition of PRESS -
+example in R (see handout #33). </a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_multivariate_normal.pdf"> 35.  Multivariate normal distribution. </a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sim_example.R"> 41.  Single index model -
+example in R. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sim_example_trace_no_short_sales.R"> 42.  Single index model:  
+Trace out the efficient frontier when short sales not allowed - example in R. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_kuhn_tucker.pdf"> 43.  Single index model -
+Kuhn-Tucker conditions when short sales are not allowed. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/timeplot_sp500.R"> 51.  Time plots of S&P 500 and equal
+allocation portfolio using 5 stocks. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockData-15.csv"> 51a.  Data used for handout 51. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockData-16.csv"> 51b.  Data used for handout 51. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/test_port.R"> 52.  Portfolio performance:  Plots and
+arithmetic and geometric mean of the portfolio growth rate. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockDataHist.csv"> 52a.  Data used for handout 52. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockDataTest.csv"> 52b.  Data used for handout 52. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/decomposition_eugene_fama.pdf"> 53. Components of
+Investement Performance (paper by Eugene Fama). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/eugene_fama_decomposition.pdf"> 54. Plot of the decomposition
+of overall performance. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_review_mpt.pdf"> 55.  Modern portfolio theory, 1950 to date. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_basics_intro.pdf"> 56.  Options - basics. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_call_put_upper_lower.pdf"> 57.  Lower and upper bounds for call and put options and put call parity. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading_options.pdf"> 58.  Trading strategies using 
+options. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_butterfly_ex.pdf"> 59.  Butterfly example using R. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_general.pdf"> 60.  Options - general notes. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 61.  Binomial option pricing model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+CRR_binomial_paper.doc"> 62.  Binomial option pricing model - Cox, Ross, Rubinstein (1979). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+binomial_put_european_and_american.pdf"> 63.  Binomial option pricing model for put option. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_model_stock_process_revised.pdf"> 64. A model for stock prices. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 65. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes_merton.pdf"> 66. Ito process and Black-Scholes-Merton 
+model. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_summary_options.pdf"> 67. Options - summary. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 68. Implied volatility. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_option_pricing_methods.R"> 69. Pricing of a call option using simulations, the binomial model and the Black-Scholes-Merton
+model. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/VaR_example.R"> 70.  Value at Risk - examples. </a><BR>
+
+
+
+
+
+<!--
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/constant_correlation_R_example.txt"> 52.  Constant correlation
+model - R example. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_lab_example.R"> 65. Options lab - example. </a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_black_scholes_exercise.pdf"> 67. Exercise. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf">  68. The Greeks. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 69. Delta dynamic hedging. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 70. Plot of Delta using R </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/VaR_example.R"> 71.  Value at Risk - examples. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_facts.pdf"> 72. Options:  A paper by Fischer Black. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+spring20.MOV"> 73. Thank you video! </a><BR>
+
+
+
+
+
+
+<!--
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_put_call_parity_american_options.pdf"> 61.  American options and put-call-parity for European options. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_model_stock_process_revised.pdf"> 62. A model for stock prices. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 63. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes_merton.pdf"> 64. Ito process and Black-Scholes-Merton 
+model. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_summary_options.pdf"> 65. Options - summary. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_lab_example.R"> 66. Options lab - example. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 67. Implied volatility. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_black_scholes_exercise.pdf"> 68. Exercise. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf">  69. The Greeks. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 70. Plot of Delta using R </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_facts.pdf"> 71. Options:  A paper by Fischer Black. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 72. Delta dynamic hedging. </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 79. Delta dynamic hedging. </a><BR>
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/VaR_example.R"> 55.  Value at Risk - examples. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+testall_s16.pdf"> 55a.  Time plots.  </a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/constant_correlation_R_example.txt"> 42.  Constant correlation model - R example. </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume_betas.pdf"> 23.  Betas and their regression tendencies (Blume). </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume1.pdf"> 24.  Portfolio Theory:  A Step Toward Its Practical Application. </a><BR>
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/z_sensitivity.txt"> 17.  Sensitivity analysis. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_trace.pdf"> 18.  Trace out the efficient frontier - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/trace.R"> 19.  Trace out the
+efficient frontier - R code.  See handout 18. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/fischer_black_trace_out.pdf"> 20.  Trace out the efficient frontier (article). </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_R.pdf"> 36.  Single index model - example using R. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/index_example.txt"> 37.  Single index model - example using R (same as handout 36). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_kuhn_tucker.pdf"> 38.  Single index model - Kuhn Tucker conditions when short sales are not allowed. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_steps.pdf"> 39.  Constant correlation model steps. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_short_sales.pdf"> 40.  Constant correlation - example with
+short sales allowed. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_no_short_sales.pdf"> 41.  Constant correlation - example with short sales
+not allowed. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/constant_correlation_R_example.txt"> 42.  Constant correlation model - R example. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/industry_performance.pdf"> 43. Industry 
+performance. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/multi_index_diagonal_form.pdf"> 44. Diagonal form 
+of the multi-index model. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/factor_analysis_industries.pdf"> 45. Factor analysis
+for stock groupings. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stock_groupings.pdf"> 46. Stock groupings. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_trace_out.pdf"> 47.  Simple criteria for optimal portfolio selection:
+Tracing out the efficient frontier. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_multi.pdf"> 48.  Simple criteria for optimal portfolio selection:  The multi
+group case. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multi_index.pdf"> 49.  Multi-index model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multigroup_model.pdf"> 50.  Multigroup model. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/timeplot_sp500.R"> 51.  Time plots of s&p 500 and equal
+allocation portfolio using 5 stocks.. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/test_port.R"> 52.  Portfolio performance:  Plots and
+arithmetic and geometric mean of the portfolio growth rate. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockDataHist.csv"> 52a.  Data used for handout #52. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stockDataTest.csv"> 52b.  Data used for handout #52. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/decomposition_eugene_fama.pdf"> 53. Components of
+Ivestement Performance (paper by Eugene Fama). </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_review_mpt.pdf"> 54.  Modern portfolio theory, 1950 to date. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/VaR_example.R"> 55.  Value at Risk - examples. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+testall_s16.pdf"> 55a.  Time plots.  </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_basics.pdf"> 56.  Options basics. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+call_faces.pdf"> 57.  Smiley faces - call option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+put_faces.pdf"> 58.  Smiley faces - put option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_examples.pdf"> 59.  Options - some simple examples. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_calls_intro.pdf"> 60.  Payoff and profit for writer and buyer - call option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_puts_intro.pdf"> 61.  Payoff and profit for writer and buyer - put option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_call_put_upper_lower.pdf"> 62.  Lower and upper bounds for call and put options and put call parity. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading_options.pdf"> 63.  Trading strategies using 
+options. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_butterfly_ex.pdf"> 64.  Butterfly example using R. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 65.  Binomial option pricing model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+CRR_binomial_paper.doc"> 66.  Binomial option pricing model - Cox, Ross, Rubinstein (1979). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+bonomial_put_european_and_american.pdf"> 67.  Binomial option pricing model for put option. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_put_call_parity_american_options.pdf"> 68.  American options and put-call-parity for European options. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_model_stock_process_revised.pdf"> 69. A model for stock prices. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 70. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes_merton.pdf"> 71. Ito process and Black-Scholes-Merton 
+model. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_summary_options.pdf"> 72. Options - summary. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_lab_example.R"> 73. Options lab - example. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 74. Implied volatility. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_black_scholes_exercise.pdf"> 75. Exercise. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf"> 76. The Greeks. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 77. Plot of Delta using R </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_facts.pdf"> 78. Options:  A paper by Fischer Black. </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 79. Delta dynamic hedging. </a><BR>
+
+
+
+
+
+
+
+
+<!--
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 68. Implied volatility. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf"> 69. The Greeks. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 70. Plot of Delta using R </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 71. Delta dynamic hedging. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_final_s18_lab.pdf"> 72.  Final exam -
+computer part. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+30stocks.zip"> 11.  Thirty stocks plus the S&P500. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+testall_s16.pdf"> 55a.  Plot 2.  </a><BR>
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_butterfly_ex.pdf"> 65.  Butterfly example using R. </a><BR>
+
+
+<LI> <a href="http://www.socr.ucla.edu/htmls/SOCR_Applications.html"> 66. Access the SOCR applet. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading.xls"> 67.  Trading strategies using options - Excel 
+file. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 68.  Binomial option pricing model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+CRR_binomial_paper.doc"> 69.  Binomial option pricing model - Cox, Ross, Rubinstein (1979). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_model_stock_process_revised.pdf"> 61. A model for stock prices. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 62. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes.pdf"> 63. Ito process and Black-Scholes-Merton 
+model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+bonomial_put_european_and_american.pdf"> 64.  Binomial option pricing model for put option. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_summary_options.pdf"> 65. Options - summary. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_black_scholes_exercise.pdf"> 66. Exercise. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+options_lab_example.R"> 67. Options lab - example. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 68. Implied volatility. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf"> 69. The Greeks. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 70. Plot of Delta using R </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 71. Delta dynamic hedging. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_final_s18_lab.pdf"> 72.  Final exam -
+computer part. </a><BR>
+
+
+
+
+-->
+
+
+
+
+<!--
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_multivariate_normal.pdf"> 91.  Multivariate normal distribution. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_exam2_s17_sol.pdf"> 86.  Exam 2 solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+exam2_sol_s16_c183c283.pdf"> 94. Exam 2 - solutions. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 68.  Binomial option pricing model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+CRR_binomial_paper.doc"> 69.  Binomial option pricing model - Cox, Ross, Rubinstein (1979). </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183_c283_port_test_s16.txt"> 55.  Portfolio performance.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+portfolio_performance.R"> 55a.  Portfolio performance.  </a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/min_var_port_s16.txt"> 8. Minimum risk portfolio - example.  </a><BR>
+
+
+<!--
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/analytic_derivation_frontier.pdf"> 9. An Analytic Derivation of the
+Efficient Portfolio Frontier (JFQA, Robert Merton, 1972). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_short_sales_theory.pdf"> 10. Short sales. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hyperbola.pdf"> 11.  Hyperbola. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/hyperbola_example.txt"> 12.  Hyperbola - example with three stocks. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/hyperbola_example.txt"> 13.  Hyperbola - R script
+(same as handout #12).  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_rf.pdf"> 14. Efficient frontier with risk free lending and borrowing. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent.pdf"> 15. How to find the point of
+tangency (see also handout 14). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent_example.pdf"> 16.  Point of tangency - example. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/port_tangent_R.txt"> 17.  R code for point of tangency. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/z_sensitivity.txt"> 18.  Sensitivity analysis. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_stockPortfolio_intro.txt"> 19.  Introduction to stockPortfolio package. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_trace.pdf"> 20.  Trace out the efficient frontier - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_trace_out.txt"> 21.  Trace out the
+efficient frontier - R code for example of handout 20. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project1_s17.pdf"> 22.  Project - please check
+for updates every week! </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_single_index.pdf"> 23.  Single index model - summary. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_betas.pdf"> 24.  Adjusting the betas. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume_betas.pdf"> 25.  Betas and their regression tendencies (Blume). </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume1.pdf"> 26.  Portfolio Theory:  A Step Toward Its Practical Application. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/levy.pdf"> 27.  On the Short-Term Stationarity of Beta Coeffcients. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume2.pdf"> 28.  Adjusting the betas using Blume's technique. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/vasicek_betas.pdf"> 29.  Adjusting the betas using Vasicek's technique. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_betas.pdf"> 30.  Are betas best? </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/beta_adjust.pdf"> 31.  Adjusting betas. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockPortfolio_supply_data.txt"> 32.  How to supply your own data to use the
+stockPortfolio package. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s09.pdf"> 33.  Practice exam. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/04_May_2009_solutions.pdf"> 33a.  Solutions to #33. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_practice_s10.pdf"> 34.  Practice problems. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/practice_problems_solutions.pdf"> 34a.  Solutions to #34. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam1_statc183c283_s13.pdf"> 35.  Practice exam. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/26_April_2013_solutions.pdf"> 35a.  Solutions to #35. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s10.pdf"> 36.  Practice exam. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/07_May_2010_solutions.pdf"> 36a.  Solutions to #36. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s16_sol.pdf"> 37.  Spring 2016
+midterm 1 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_optimal_portfolios.pdf"> 38.  Simple criteria for optimal portfolio selection. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_steps.pdf"> 39.  Single index model steps. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_short_sales.pdf"> 40.  Single index model - example with short sales allowed. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_no_short_sales.pdf"> 41.  Single index model - example with short sales not allowed. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_single_index_ex.pdf"> 42.  Single index model and optimization procedure give the same answer. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_R.pdf"> 43.  Single index model - example using R. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/index_example.txt"> 44.  Single index model - example using R (same as handout 42). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_kuhn_tucker.pdf"> 45.  Single index model - Kuhn Tucker conditions when short sales are not allowed. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_steps.pdf"> 46.  Constant correlation model steps. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_short_sales.pdf"> 47.  Constant correlation - example with
+short sales allowed. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_rho_no_short_sales.pdf"> 48.  Constant correlation - example with short sales
+not allowed. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/constant_correlation_R_example.txt"> 49.  Constant correlation model - R example. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_sim_ccm_stockPortfolio.txt"> 50.  Single index and constant correlation models
+using the stockPortfolio package. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_sim_stockPortfolio_trace.txt"> 51.  Trace out the efficient
+frontier when risk free lending and borrowing does not exist - an example using the stockPortfolio package. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_trace_out.pdf"> 52.  Simple criteria for optimal portfolio selection:
+Tracing out the efficient frontier. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_multi.pdf"> 53.  Simple criteria for optimal portfolio selection:  The multi
+group case. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multi_index.pdf"> 54.  Multi-index model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multigroup_model.pdf"> 55.  Multigroup model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183_c283_multigroup_stockPortfolio1.txt"> 56.  Multi group model using the stockPortfolio
+package. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_review_mpt.pdf"> 57.  Modern portfolio theory, 1950 to date. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183_c283_port_test_s16.txt"> 58.  Portfolio performance.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+portfolio_performance.R"> 58a.  Portfolio performance.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+plotall_s16.pdf"> 58.  Plot 1 (see R code in handout #58).  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+testall_s16.pdf"> 59.  Plot 2 (see R code in handout #58).  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam2_statc183c283_may2006.pdf"> 60.  Practice problems for exam 2 - May 2006. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/solutions_10_may_2006.pdf"> 60a.  Solutions to #60. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam2_s08.pdf"> 61.  Practice problems for exam 2 - May 2008. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/solutions_09_may_2008.pdf"> 61a.  Solutions to #61. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sharpe__mutual_fund_performance.pdf"> 62. Mutual fund
+performance. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/industry_performance.pdf"> 63. Industry 
+performance. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/multi_index_diagonal_form.pdf"> 64. Diagonal form 
+of the multi-index model. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/factor_analysis_industries.pdf"> 65. Factor analysis
+for stock groupings. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stock_groupings.pdf"> 66. Stock groupings. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/decomposition_eugene_fama.pdf"> 67. Components of
+Ivestement Performance (paper by Eugene Fama). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam1_s17_sol.pdf"> 68.  Exam 1 solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_basics.pdf"> 69.  Options basics. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+call_faces.pdf"> 70.  Smiley faces - call option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+put_faces.pdf"> 71.  Smiley faces - put option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_examples.pdf"> 72.  Options - some simple examples. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_calls_intro.pdf"> 73.  Payoff and profit for writer and buyer - call option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_puts_intro.pdf"> 74.  Payoff and profit for writer and buyer - put option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_call_put_upper_lower.pdf"> 75.  Lower and upper bounds for call and put options and put call parity. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading_options.pdf"> 76.  Trading strategies using 
+options. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_butterfly_ex.pdf"> 77.  Butterfly example using R. </a><BR>
+
+
+<LI> <a href="http://www.socr.ucla.edu/htmls/SOCR_Applications.html"> 73. Access the SOCR applet. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading.xls"> 78.  Trading strategies using options - Excel 
+file. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam2_statc183c283_may2006.pdf"> 79.  Practice problems for exam 2 - May 2006. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/solutions_10_may_2006.pdf"> 79a.  Solutions to #79. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam2_s08.pdf"> 80.  Practice problems for exam 2 - May 2008. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/solutions_09_may_2008.pdf"> 80a.  Solutions to #80. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 81.  Binomial option pricing model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+CRR_binomial_paper.doc"> 82.  Binomial option pricing model - Cox, Ross, Rubinstein (1979). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_model_stock_process.pdf"> 83. A model for stock prices. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 84. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes.pdf"> 85. Ito process and Black-Scholes 
+model. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_exam2_s17_sol.pdf"> 86.  Exam 2 solutions. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 87. Implied volatility. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_summary_options.pdf"> 88. Options - summary. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_black_scholes_exercise.pdf"> 89. Exercise. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf"> 90. The Greeks. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_multivariate_normal.pdf"> 91.  Multivariate normal distribution. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 92. Plot of Delta using R </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 93. Delta dynamic hedging. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+exam2_sol_s16_c183c283.pdf"> 94. Exam 2 - solutions. </a><BR>
+
+
+
+
+
+
+
+<!--
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s16_sol.pdf"> 63. Exam 1 - solutions. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam3_s13.pdf"> 86.  Practice exam. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam3_solutions.pdf"> 87.  Practice exam - solutions. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_two_stocks_example"> 8. Example with two stocks
+(portfolio possibilities curve, efficient frontier). </a><BR>
+For handout #8 also download the R commands and the files with the data using the following 
+3 links: <BR>
+ <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/fin_1.txt"> a. R commands. </a><BR>
+ <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/table_1.csv"> b. First data set (table1.csv). </a><BR>
+ <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/table_2.csv"> c.  Second data set (table2.csv). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_lab.txt"> 9.  Lab - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_short_sales_theory.pdf"> 10. Short sales. </a><BR> 
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_rf.pdf"> 11. Efficient frontier with risk free lending and borrowing. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent.pdf"> 12. How to find the point of tangency (see also handout 11). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_tangent_example.pdf"> 13.  Point of tangency - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/port_tangent_R.txt"> 14.  R code for point of tangency. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/z_sensitivity.txt"> 15.  Sensitivity analysis. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_stockPortfolio_intro.txt"> 16.  Introduction to stockPortfolio package. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hyperbola.pdf"> 17.  Hyperbola. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_trace.pdf"> 18.  Trace out the efficient frontier - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_trace_out.txt"> 19.  Trace out the efficient frontier - R code for example of handout 18. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project_s15.pdf"> 20. Project (more details will be discussed in class). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/hyperbola_example.txt"> 21.  Hyperbola - example with three stocks. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_single_index.pdf"> 22.  Single index model - summary. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_betas.pdf"> 23.  Adjusting the betas. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume_betas.pdf"> 24.  Betas and their regression tendencies (Blume). </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume1.pdf"> 25.  Portfolio Theory:  A Step Toward Its Practical Application. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/levy.pdf"> 26.  On the Short-Term Stationarity of Beta Coeffcients. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume2.pdf"> 27.  Adjusting the betas using Blume's technique. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/vasicek_betas.pdf"> 28.  Adjusting the betas using Vasicek's technique. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_betas.pdf"> 29.  Are betas best? </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/beta_adjust.pdf"> 30.  Adjusting betas. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockPortfolio_supply_data.txt"> 31.  How to supply your own data to use the
+stockPortfolio package. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s09.pdf"> 32.  Practice exam - only #1, #3 (d,e,f), #4. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/04_May_2009_solutions.pdf"> 32a.  Solutions to #32. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_practice_s10.pdf"> 33.  Practice problems - only #3, #7, #8. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/practice_problems_solutions.pdf"> 33a.  Solutions to #33. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam1_statc183c283_s13.pdf"> 34.  Practice exam. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/26_April_2013_solutions.pdf"> 34a.  Solutions to #34. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s10.pdf"> 35.  Practice exam - only #1, #2, and #3. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/07_May_2010_solutions.pdf"> 35a.  Solutions to #35. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_optimal_portfolios.pdf"> 36.  Simple criteria for optimal portfolio selection. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_steps.pdf"> 37.  Single index model steps. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_short_sales.pdf"> 38.  Single index model - example with short sales allowed. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_no_short_sales.pdf"> 39.  Single index model - example with short sales not allowed. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_single_index_ex.pdf"> 40.  Single index model and optimization procedure give the same answer. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_index_R.pdf"> 41.  Single index model - example using R. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/index_example.txt"> 42.  Single index model - example using R (same as handout 41). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_kuhn_tucker.pdf"> 43.  Single index model - Kuhn Tucker conditions when short sales are not allowed. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_trace_out.pdf"> 50.  Simple criteria for optimal portfolio selection:
+Tracing out the efficient frontier. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_multi.pdf"> 51.  Simple criteria for optimal portfolio selection:  The multi
+group case. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multigroup_model.pdf"> 52.  Multigroup model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183_c283_multigroup_stockPortfolio1.txt"> 53.  Multi group model using the stockPortfolio
+package. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_multi_index.pdf"> 54.  Multi-index model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_review_mpt.pdf"> 55.  Modern portfolio theory, 1950 to date. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183_c283_port_test1.txt"> 56.  Portfolio performance.  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+plotall1.pdf"> 57.  Plot 1 (see R code in handout #56).  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+testall1.pdf"> 58.  Plot 2 (see R code in handout #56).  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam2_statc183c283_may2006.pdf"> 59.  Practice problems for exam 2 - May 2006. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/solutions_10_may_2006.pdf"> 59a.  Solutions to #59. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam2_s08.pdf"> 60.  Practice problems for exam 2 - May 2008. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/solutions_09_may_2008.pdf"> 60a.  Solutions to #60. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_basics.pdf"> 61.  Options basics. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+call_faces.pdf"> 62.  Smiley faces - call option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+put_faces.pdf"> 63.  Smiley faces - put option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_options_examples.pdf"> 64.  Options - some simple examples. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_calls_intro.pdf"> 65.  Payoff and profit for writer and buyer - call option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_puts_intro.pdf"> 66.  Payoff and profit for writer and buyer - put option. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_call_put_upper_lower.pdf"> 67.  Lower and upper bounds for call and put options and put call parity. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading_options.pdf"> 68.  Trading strategies using 
+options. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_butterfly_ex.pdf"> 69.  Butterfly example using R. </a><BR>
+
+
+<LI> <a href="http://www.socr.ucla.edu/htmls/SOCR_Applications.html"> 70. Access the SOCR applet. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_trading.xls"> 71.  Trading strategies using options - Excel 
+file. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 72. Binomial option pricing 
+model - introduction. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/binomial_example2.pdf"> 73. Binomial option pricing 
+model - example. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_model_stock_process.pdf"> 74. A model for stock prices. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 75. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes.pdf"> 76. Ito process and Black-Scholes 
+model. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_est_volatility.xls"> 77.  Estimating volatility - Excel 
+file. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_implied_volatility.pdf"> 78. Implied volatility. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_summary_options.pdf"> 79. Options - summary. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_black_scholes_exercise.pdf"> 80. Exercise. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+Greeks1.pdf"> 81. The Greeks. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+greeks_graphs.txt"> 82. Plot of Delta using R </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_delta_hedging.pdf"> 83. Delta dynamic hedging. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam3_s13.pdf"> 84.  Practice exam. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam3_solutions.pdf"> 85.  Practice exam - solutions. </a><BR>
+
+SPRING 2016 ENDS HERE
+-->
+
+
+
+
+
+<!--
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/binomial_options_example.pdf"> 73. Binomial option pricing 
+model - example. </a><BR>
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/black_1972_article.pdf"> 19.  Fisher Black's paper. </a><BR>
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam1_statc183c283_s13.pdf"> 45.  Practice exam. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s14.pdf"> 50.  Exam 1. </a><BR>
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam2_statc183c283_s13.pdf"> 68.  Practice exam. </a><BR>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/elton_et_al_review_mpt.pdf"> 48.  Modern portfolio theory, 1950 to date. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183_c283_port_test1.txt"> 49.  Portfolio performance.  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+plotall1.pdf"> 50.  Plot 1 (see handout #49).  </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+testall1.pdf"> 51.  Plot 2 (see handout #49).  </a><BR>
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 63. Binomial option pricing 
+model - introduction. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/binomial_options_example.pdf"> 64. Binomial option pricing 
+model - example. </a><BR>
+
+
+
+
+
+
+
+
+
+<!--
+-->
+
+<!--
+
+
+<!--
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 63. Simulation of stock's path. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s10.pdf"> 44.  Practice exam. </a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_butterfly.xls"> 52.  Butterfly trading strategy - Excel 
+file. </a><BR>
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_ito_black_scholes.pdf"> 58. Ito process and Black-Scholes 
+model. </a><BR>
+
+
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+<LI> <a href="http://cran.r-project.org/web/packages/stockPortfolio/index.html"> 28. Access the package stockPortfolio on CRAN. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183_c283_stockPortfolio"> 29.  Example using the package stockPortfolio.
+<!-- - by David Diez.  </a><BR>
+
+<!--
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_binomial.pdf"> 41. Binomial option pricing model - introduction. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+lectures_notes_28_may.pdf"> 46. Lecture notes for 28 May. </a><BR>
+
+
+
+-->
+
+<!--
+
+
+
+
+
+
+
+-->
+
+<h3> <p> Labs </p> </h3>
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_read_data1_ex1.R"> 1. Example with two and three
+stocks- R script:  Compute the the composition of the miniumum risk portfolio, draw the frontier (two stocks).  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/merton_parabola_example1.R"> 2.  Parabola example - R script.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/merton_hyperbola_mutual_fund_example1_3stocks.R"> 3.  Hyperbola
+and mutual fund theoremexample - R script.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/mutual_fund_theorem.R"> 4.  Mutual
+fund theorem - R script.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_mutual_fund_theorem_2.R"> 5.  Mutual
+fund theorem - R script:  Find the minimum risk portfolio using m stocks or using two portfolios on the frontier.  </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risk_free_asset.R"> 6.  Risk free asset - R script.  </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/port_tangent_R.txt"> 7.  R code for point of tangency. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_trace.pdf"> 8.  Trace out the efficient frontier - example. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/trace.R"> 9.  Trace out the
+efficient frontier - R code. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risky_assets_risk_free_asset.R"> 10.  R code with several results
+from previous notes. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume__vasicek_adjusted_betas.R"> 11.  Adjusting the betas using
+Blume's and Vasicek's technique - example in R. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData48.csv"> 11a.  csv file stockData48.csv. </a><br>
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData49.csv"> 11b. csv file stockData49.csv. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData50.csv"> 11c. csv file stockData50.csv. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/press_decomposition.R"> 12.  Decomposition of PRESS -
+example in R (see handout #23). </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sim_example.R"> 13.  Single index model -
+example in R. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sim_example_trace_no_short_sales.R"> 14.  Single index model:  
+Trace out the efficient frontier when short sales not allowed - example in R. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_constant_correlation_model.R"> 15.  Constant correlation
+model - R example. </a><br>
+
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/timeplot_sp500.R"> 16.  Time plots of S&amp;P 500 and equal
+allocation portfolio using 5 stocks. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData-15.csv"> 16a.  Data used for handout 16. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockData-16.csv"> 16b.  Data used for handout 16. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/test_port.R"> 17.  Portfolio performance:  Plots and
+arithmetic and geometric mean of the portfolio growth rate. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockDataHist.csv"> 17a.  Data used for handout 17. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stockDataTest.csv"> 17b.  Data used for handout 17. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_options_investing_strategies.R"> 18.  Investing
+strategies using options - R examples. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_butterfly_ex.pdf"> 19.  Butterfly example using R. </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/stock_simulation.txt"> 20. Monte Carlo simulation of a 
+stock's path. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_option_pricing_methods.R"> 21. Pricing of a call option using simulations, the binomial model and the Black-Scholes-Merton
+model. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/options_lab_example.R"> 22. Options lab - example. </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/VaR_example.R"> 23.  Value at Risk - examples. </a><br>
+
+
+
+
+<!--
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risk_free_asset.R"> 4.  Risk free asset - R script.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risky_assets_risk_free_asset.R"> 5.  Summary - R script.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/risky_assets_risk_free_asset.R"> 6.  R code with several results
+from previous notes. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/blume_vasicek_adjusted_betas.R"> 7.  Adjusting the betas using
+Blume's and Vasicek's technique - example in R. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/press_decomposition.R"> 8.  Decomposition of PRESS -
+example in R (see handout #33). </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sim_example.R"> 9.  Single index model -
+example in R. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/sim_example_trace_no_short_sales.R"> 10.  Single index model:  
+Trace out the efficient frontier when short sales not allowed - example in R. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_constant_correlation_model.R"> 11.  Constant correlation
+model - R example. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+stock_simulation.txt"> 12. Monte Carlo simulation of a 
+stock's path. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_option_pricing_methods.R"> 13. Pricing of a call option using simulations, the binomial model and the Black-Scholes-Merton
+model. </a><BR>
+
+
+
+
+
+<!--
+
+
+
+-->
+
+
+<h3> <p> Project </p> </h3>
+
+<h4>
+
+<li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project1_s22.pdf"> Project 1: Updated on 03/29:
+Due by 22:00 on Monday, 04/04.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project2_s22.pdf"> Project 2: Updated on 04/03:
+Due by 22:00 on Sunday, 04/10.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project3_s22.pdf"> Project 3: Updated on 04/11:
+Due by 22:00 on Sunday, 04/17.  </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project4_s22.pdf"> Project 4: Updated on 04/17:
+Due by 22:00 on Sunday, 04/24.  </a><br>
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project5_s22.pdf"> Project 5: Updated on 04/25:
+Due by 22:00 on Monday, 05/02.  </a><br>
+
+
+
+</li><li> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project6_s22.pdf"> Project 6: Updated on 05/03:
+Due by 22:00 on Thursday, 05/12.  </a><br>
+
+
+
+<!--
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project5_s21.pdf"> Project 5: Updated on 04/24:
+Due by 22:00 on Saturday, 05/01.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project6_s21.pdf"> Project 6: Updated on 05/02:
+Due by 22:00 on Monday, 05/10.  </a><BR>
+
+
+
+
+
+<!--
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project_s20.pdf"> 2. Updated on 04/06:
+Due on 04/17.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project3_s20.pdf"> 3. Posted on 04/17:
+Due on 04/25.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project3_sol_s20.pdf"> 3a. Project 3
+solutions.  </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project4_s20.pdf"> 4. Updated on 04/27:
+Due on 05/06.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project5_s20.pdf"> 5. Updated on 05/08:
+Due on 05/17.  </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project6_s20.pdf"> 6. Updated on 05/20:
+Due on 05/29.  </a><BR>
+
+
+
+
+
+
+
+
+<!--
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project1_s19.pdf"> 3. Updated on 04/29:
+Due on 05/08.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project1_s19.pdf"> 4. Updated on 05/06:
+Due on 05/11.  </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project1_s19.pdf"> 5. Updated on 05/10:
+Due on 05/18.  </a><BR>
+
+
+
+
+
+<!--
+    
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/projects18.R"> 2. Useful R commands to begin your
+project.  </a><BR>
+    
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project2_s18.pdf"> 3. Updated on 04/11:
+Project 2 - due on
+Tuesday, 04/17, by 22:00.  </a><BR>
+        
+    
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project3_s18.pdf"> 4. Updated on 04/16:
+Project 3 - due on Saturday, 04/21, by 22:00.  </a><BR>
+
+    
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/adjust_betas_new.R"> 5. Adjusting the betas - useful
+R commands.  </a><BR>
+
+    
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project4.pdf"> 6. Updated on 04/30:
+Project 4 - due on Sunday, 05/06, by 22:00.  </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project5.pdf"> 7. Updated on 05/07:
+Project 5 - due on Monday, 05/14, by 22:00.  </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_project6.pdf"> 8. Updated on 05/15:
+Project 6 - due on Friday, 05/25, by 22:00.  </a><BR>
+
+
+
+-->
+
+<h3> <p> Practice exams and problems </p> </h3>
+<h4>
+<!--  
+ <LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam1_statc183c283_s13.pdf"> 1.  Practice
+ exam - spring 2013. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/26_April_2013_solutions.pdf"> 1a.  Practice exam - spring 2017
+solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s16.pdf"> 2.  Spring 2016
+midterm 1. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_s16_sol.pdf"> 2a.  Spring 2016
+midterm 1 - solutions. </a><BR>
+   
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam2_s17.pdf"> 3.  Practice exam - spring 2017. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_exam2_s17_sol.pdf"> 3a.  Practice exam - spring 2017 solutions. </a><BR>
+
+
+
+
+<!-- 
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_practice_final_exam_s18.pdf"> 3.  Practice final exam. </a><BR>
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_practice_final_sol_s18.pdf"> 3a.  Practice final exam - solutions. </a><BR>
+
+
+
+<!--     
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam1_sol_s18.pdf"> 3.  Spring 2018
+midterm 1 - solutions. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+statc183c283_exam2_s17.pdf"> 4.  Practice exam. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/
+c183c283_exam2_s17_sol.pdf"> 4a.  Exam 2 solutions. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_exam2_sol_s18.pdf"> 5.  Spring 2018
+midterm 2 - solutions. </a><BR>
+
+
+
+
+
+
+
+
+
+-->
+ <!--
+<H3> <P> Quizzes </P> </H3>
+<H4>
+    <!--
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_quiz1_s21.pdf"> Quiz 1. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_quiz1_sol_s21.pdf"> Quiz 1 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_quiz2_s21.pdf"> Quiz 2. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_quiz2_sol_s21.pdf"> Quiz 2 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_quiz3_s21.pdf"> Quiz 3. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_quiz3_sol_s21.pdf"> Quiz 3 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/quiz3_ex3_s21_sol.R"> Quiz 3 - solutions:
+Question 3 (R code). </a><BR>
+
+
+
+
+
+
+
+-->
+    
+</h4><h3> <p> Homework </p> </h3>
+<h4>
+  
+
+<!--  
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw1_s22.pdf"> Homework 1: Due by 22:00
+on Monday, 04 April. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw1_sol_s22.pdf"> Homework 1 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s22.pdf">  Homework 2: Due by 22:00
+on Tuesday, 12 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw2_sol_s22.pdf"> Homework 2 - solutions. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s22.pdf">  Homework 3: Due by 22:00
+on Monday, 18 April. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_sol_s22.pdf"> Homework 3 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw4_s22.pdf">  Homework 4: Due by 22:00
+on Sunday, 24 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_sol_s22.pdf"> Homework 4 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s22.pdf">  Homework 5: Due by 22:00
+on Monday, 02 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw5_sol_s22.pdf"> Homework 5 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s22.pdf">  Homework 6: Due by 22:00
+on Wednesday, 11 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_sol_s22.pdf"> Homework 6 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw7_s22.pdf">  Homework 7: Due by 22:00
+on Tuesday, 17 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw7_sol_s22.pdf"> Homework 7 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw8_s22.pdf">  Homework 8: Due by 22:00
+on Tuesday, 24 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw8_sol_s22.pdf"> Homework 8 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw9_s22.pdf">  Homework 9: Due by 22:00
+on Tuesday, 31 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/Statc183c283_hw9_sol_s22.pdf"> Homework 9 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw10_s22.pdf">  Homework 10: Due by 22:00
+on Saturday, 04 June. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw10_sol_s22.pdf"> Homework 10 - solutions. </a><BR>
+
+
+
+
+
+ <!--
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_sol_s21.pdf"> Homework 3 - solutions. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw4_s21.pdf">  Homework 4: Due by 22:00
+on Saturday, 24 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_s21_sol.pdf"> Homework 4 - solutions. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s21.pdf">  Homework 5: Due by 22:00
+on Saturday, 01 May. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw5_sol_s21.pdf"> Homework 5 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s21.pdf">  Homework 6: Due by 22:00
+on Wednesday, 12 May. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_sol_s21.R"> Homework 6 - solutions. </a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw7_s21.pdf">  Homework 7: Due by 22:00
+on Saturday, 15 May. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw7_sol_s21.pdf"> Homework 7 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw8_s21.pdf">  Homework 8: Due by 22:00
+on Saturday, 22 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw8_sol_s21.pdf"> Homework 8 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw9_s21.pdf">  Homework 9: Due by 22:00
+on Friday, 28 May. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/Statc183c283_hw9_sol_s21.pdf"> Homework 9 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw10_s21.pdf">  Homework 10: Due by 22:00
+on Friday, 04 June. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw10_sol_s21.pdf"> Homework 10 - solutions. </a><BR>
+
+
+
+
+
+
+<!-- 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw1_sol_s20.pdf"> 1a.  Homework 1 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s20.pdf"> 2.  Homework 2: Due by 22:00
+on Thursday, 23 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw2_s20_sol.pdf"> 2a.  Homework 2 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s20.pdf"> 3.  Homework 3: Due by 22:00
+on Sunday, 10 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw3sol_s20.pdf"> 3a.  Homework 3 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_s20.pdf"> 4.  Homework 4: Due by 22:00
+on Monday, 01 June. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_sol_s20.pdf"> 4a.  Homework 4 - solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s20.pdf"> 5.  Homework 5: Due by 22:00
+on Friday, 05 June. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/Statc183c283_hw5_sol_s20.pdf"> 5a.  Homework 5 - solutions. </a><BR>
+
+
+
+
+
+
+ <!--
+ 
+ 
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s19.pdf"> 2.  Homework 2: Due by 22:00
+on Saturday, 13 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s19.pdf"> 3.  Homework 3: Due by 22:00
+on Saturday, 20 April. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_s19.pdf"> 4.  Homework 4: Due by 22:00
+on Thursday, 25 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s19.pdf"> 5.  Homework 5: Due by 22:00
+on Saturday, 04 May. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s19.pdf"> 6.  Homework 6: Due by 22:00
+on Tuesday, 14 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw7_s19.pdf"> 7.  Homework 7: Due by 22:00
+on Saturday, 01 June. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw8_s19.pdf"> 8.  Homework 8: Due by 22:00
+on Thursday,  06 June. </a><BR>
+
+
+
+
+
+
+<H3> <P> Take-home midterm </P> </H3>
+<H4>
+    
+   
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/30stocks.zip"> 1.  Thirty stocks plus the S&P 500. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/exam2_ticker.txt"> 2.  Ticker vector. </a><BR>
+
+
+ 
+
+
+<!--
+
+
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw1_sol_s18.pdf"> 1a.  Homework 1
+solutions.</a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s18.pdf"> 2.  Homework 2: Due on
+Friday, 20 April. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s18_sol.pdf"> 2a.  Homework 2
+solutions.</a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s18.pdf"> 3.  Homework 3: Due on
+Wednesday, 25 April. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s18_sol.pdf"> 3a.  Homework 3
+solutions.</a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_practice_portfolio.pdf"> 4.  Homework 4:
+Problems 5, 6, 7, 8, 9:  Due on Wednesday, 09 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_practice_portfolio.pdf"> 5.  Homework 5:
+Problems 2, 10, 11, 17:  Due on Wednesday, 16 May. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_practice_sol.pdf"> 4a5a.  Homework
+4 and 5 solutions.</a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw5_problem11_sol.pdf"> 5a.  Homework 5 -
+problem 11 solutions.</a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s18.pdf"> 6.  Homework 6: Due on
+Friday, 01 June. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw6_sol_s18.pdf"> 6a.  Homework 6
+solutions.</a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw7_s18.pdf"> 7.  Homework 7 : Due on
+Friday, 08 June. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/Statc183c283_hw7_sol_s18.pdf"> 7a.  Homework 7
+solutions.</a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_options_lab.pdf"> 8.  Options lab: Due on
+Friday, 08 June. </a><BR>
+
+
+
+
+<!--
+
+
+
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_portfolio_practice_sol.pdf"> 5a.  Homework 4 and 5
+solutions.</a><BR>
+
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw1_sol_s17.pdf"> 1a.  Homework 1
+solutions. </a><BR>
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s17.pdf"> 2.  Homework 2: Due on
+Friday, 28 April.</a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw1_s17.pdf"> 1.  Homework 1: Due on
+Wednesday, 19 April. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s17.pdf"> 3.  Homework 3 - Due on
+Friday, 12 May. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/hw3ticker.R"> 3a.  Homework 3 - Tickers. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_s17.pdf"> 4.  Homework 4 - Due on
+Monday, 05 June. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4sol_s17.pdf"> 4a.  Homework 4
+solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s17.pdf"> 5.  Homework 5 - Due on
+Wednesday, 07 June. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/Statc183c283_hw5sol_s17.pdf"> 5a.  Homework 5
+solutions. </a><BR>
+
+
+
+
+<!--
+
+<!--
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_sol_s16.pdf"> 2a.  Homework 2 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s16.pdf"> 3.  Homework 3: Due on
+Monday, 09 May.</a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_sol_s16.pdf"> 3a.  Homework 3 - solutions. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/c183c283_hw3_sol_s16.txt"> 3b.
+Homework 3 - solutions (R code). </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_s16.pdf"> 4.  Homework 4: Due on
+Wednesday, 25 May. </a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4sol_s16.pdf"> 4a.
+Homework 4 - solutions. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s16.pdf"> 5.  Homework 5: Due on
+Friday, 03 June. </a><BR>
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s16.pdf"> 6.  Homework 6: Due on
+Friday, 03 June. </a><BR>
+
+
+
+
+
+
+
+
+
+<!--
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s15.pdf"> Homework 2: Due on Wednesday, 22 April.
+Do not use the stockPortfolio package yet! </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw3_s15.pdf"> Homework 3: Due on Friday, 08 May. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw4_s15.pdf"> Homework 4: Due on Wednesday, 20 May. </a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s15.pdf"> Homework 5: Due on Friday, 29 May.</a><BR>
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s15.pdf"> Homework 6: Due on Wednesday, 03 June. </a><BR>
+
+SPRING 2016 ENDS HERE
+-->
+
+
+
+<!--
+<!--
+
+<!--
+-->
+
+
+
+
+
+<!--
+
+
+<!--
+
+
+
+
+
+
+
+
+<!--
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw2_s10.pdf"> Homework 2: Due on Wednesday, 21 April.</a><BR>
+
+
+
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw5_s10.pdf"> Homework 5: Due on Friday, 28 May.</a><BR>
+
+
+<LI> <a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/statc183c283_hw6_s10.pdf"> Homework 6: Due on Wednesday, 02 June.</a><BR>
+
+-->
+
+<!--
+
+
+<!-- 
+To access the two-asset efficient frontier applet click
+<a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/portfolio.html"> here</a>.  <BR>
+</H4>
+
+To access the applet of the two-asset efficient frontier when riskless lendning and borrowing exists click
+<a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/tangent/portfolio_tangent.html"> here</a>.
+</H4>
+
+<!--
+<H3> <BLINK> Announcements </BLINK> </H3>
+<UL>
+<LI> First lecture is on Monday, 08 January 2007. <BR>
+Location: Public Policy 1337.  <BR>
+11:00 - 11:50. <BR>
+See you then!
+</UL>
+
+For the course syllabus click
+<a href="http://www.stat.ucla.edu/~nchristo/statistics_c183_c283/portfolio.html"> here</a>.
+</H4>
+
+-->
+
+
+</h4><h3> </h3>
+Back to the Statistics Department <a href="http://www.stat.ucla.edu/">
+Home</a> page. <br>
+<h4>
+
+
+<!--
+<font
+ face="Times New Roman, Times, serif">Visitor number <img
+ src="http://counter.digits.com/wc/-d/4/nicolaschristou" align="middle"
+ border="0" height="20" hspace="2" vspace="2" width="60"> , since Jan.
+01, 2007 <br>
+</font>
+<H4>
+<UL>
+-->
+
+<!-- 
+<H3>Back to the Statistics Department <a href="http://www.stat.ucla.edu">
+Home</a> page.
+</H3>
+-->
+
+
+
+
+
+
+
+
+
+
+
+</h4></li></h4></li></h4></li></body></html>
